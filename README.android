@@ -1,0 +1,19 @@
+Compiling for the Android Platform
+----------------------------------
+
+Android.mk - Build file for the AOSP Platform using the old "make" based build system
+Android.bp - Build file for the AOSP Platform using the new "ninja" based build system
+
+The ninja based build system ( soong ) is used on the master branch where as the make
+based build system is used on all branches upto and including android-6.0.1
+
+You probably don't want to use libiconv on android in a production environment.
+
+
+
+
+
+
+
+
+

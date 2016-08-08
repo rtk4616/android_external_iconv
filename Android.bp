@@ -1,0 +1,34 @@
+cc_library {
+    name: "libiconv",
+
+    cflags: [
+        "-Wno-multichar",
+        "-Wno-unused-parameter",
+        "-Wno-missing-field-initializers",
+        "-Wno-sign-compare",
+        "-Wno-static-in-inline",
+        "-Wno-tautological-compare",
+        "-Wno-incompatible-pointer-types",
+        "-Wno-parentheses-equality",
+        "-D_ANDROID",
+        "-DLIBDIR=\\\"c\\\"",
+        "-DBUILDING_LIBICONV",
+        "-DIN_LIBRARY",
+    ],
+    stl: "none",
+
+    local_include_dirs: [
+        ".",
+        "include",
+        "lib",
+        "libcharset/include",
+    ],
+
+    export_include_dirs: ["include"],
+
+    srcs: [
+        "libcharset/lib/localcharset.c",
+        "lib/iconv.c",
+        "lib/relocatable.c",
+    ]
+}
