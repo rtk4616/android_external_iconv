@@ -34,8 +34,9 @@ libiconv_export_include_dirs := \
 	$(libiconv_path)/include
 
 LOCAL_PATH := $(libiconv_path)
+$(info MODULE.TARGET.STATIC_LIBRARIES.libiconv=$(MODULE.TARGET.STATIC_LIBRARIES.libiconv))
 
-ifndef MODULE.TARGET.STATIC_LIBRARIES.libiconv
+ifndef $(MODULE.TARGET.STATIC_LIBRARIES.libiconv)
 include $(CLEAR_VARS)
 LOCAL_MODULE := $(libiconv_module_name)
 LOCAL_CFLAGS := $(libiconv_cflags)
@@ -45,7 +46,7 @@ LOCAL_SRC_FILES := $(libiconv_sources)
 include $(BUILD_STATIC_LIBRARY)
 endif
 
-ifndef MODULE.TARGET.SHARED_LIBRARIES.libiconv
+ifndef $(MODULE.TARGET.SHARED_LIBRARIES.libiconv)
 include $(CLEAR_VARS)
 LOCAL_MODULE := $(libiconv_module_name)
 LOCAL_CFLAGS := $(libiconv_cflags)
